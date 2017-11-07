@@ -18,8 +18,4 @@ $(document).ready(function() {
     $(this).fadeTo(400, 1);
     });
     
-    $("#exit").click(function(){
-       $(".inputs").hide();
-
-   });
 });
