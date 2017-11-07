@@ -50,6 +50,7 @@ h1 {
 	align-self: center;
 	z-index: 0;
 	cursor:context-menu;
+	margin: 10px;
 }
 .reservation {
 	color: #E34E45;
@@ -93,12 +94,12 @@ button {
 .tables {
 	 display: flex;
 	 flex-flow: wrap;
-	 justify-content:center ;
+	 justify-content: center ;
 	 background-color: white;
 	 width:450px;
 	 height:400px;
-}
 
+}
 
 .reserved:hover {
 	cursor: not-allowed;

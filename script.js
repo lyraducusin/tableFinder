@@ -5,7 +5,7 @@ $(document).ready(function() {
       $(".tableNumber").text("Table Number: " + this.innerHTML);
       $(".available").css("z-index","-20");
 
-    $(".submitInfo").click(function(){
+    $(".save").click(function(){
         $(".form").css("display","none");
         $(".available").css("z-index","0");
       })
@@ -17,5 +17,5 @@ $(document).ready(function() {
     $(".available").mouseleave(function () {
     $(this).fadeTo(400, 1);
     });
-    
+
 });
