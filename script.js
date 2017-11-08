@@ -1,15 +1,16 @@
 $(document).ready(function() {
 
-var available;
-var name;
-var container;
-var userText;
+  var available;
+  var name;
+  var container;
+  var userText;
 
   $(".available").click(function () {
     $("form").toggle(true);
     $(".tableNumber").text("Table Number: " + this.innerHTML);
     container = $(this);
   });
+
 
   $(".save").on("click",function(event){
     $("form").css("display","none");
@@ -28,31 +29,22 @@ var userText;
 
   });
 
-  // $(".reserved").on("mouseenter", function(event) {
-  //   //  $(this).append(""<div class="enter">"" + userName "</div>")
-  //   $(this).text(name);
-  // }).on("mouseleave", function(event) {
-  //   $(this).text(userText);
-  // });
-
+  //Should display the info for reservation
   $(".available").on("mouseenter", function(event) {
     if($(this).hasClass("reserved")){
       name = $(this).attr("name");
       userGuestNum = $(this).attr("numberOfParty");
       userText = $(this).text();
-
       $(this).text("");
       $(this).append("<div class ='hoverBox'>" + "Name: " + name + "Party size: "  + userGuestNum + "</div>");
-      // $(this).text.append("<div>" + name + userGuestNum "</div>")
     }
-
-  }).on("mouseleave", function(event) {
+    }).on("mouseleave", function(event) {
     if($(this).hasClass("reserved")){
       $(this).text(userText);
     }
+    });
 
-  });
-
+  //Exit the icon
   $(".boxclose").on("click",function(){
     $("form").toggle(false);
   });
