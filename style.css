@@ -21,6 +21,10 @@ body {
 	text-align: center;
 	padding: 5px;
 }
+
+.table {
+	position: relative;
+}
 form {
 	position: absolute;
 	display: none;
@@ -156,10 +160,23 @@ button {
 }
 
 .hoverBox{
-	display: block;
-	font-weight: normal 600;
-	display: block;
+	display: none;
+	font-weight: normal;
 	position: absolute;
-	margin-top: 67%;
-	border: solid;
+	bottom: 0;
+	z-index: 100;
+	border: 1px solid #000;
+  padding: 5px;
+  background-color: pink;
+  border-radius: 5px;
+	transition: 0.5s;
+}
+
+.table:hover .hoverBox {
+	display: block;
+}
+
+p {
+	margin: 0;
+	padding: 0;
 }

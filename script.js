@@ -4,7 +4,8 @@ $(document).ready(function() {
   var name;
   var container;
   var userText;
-
+  var phoneNumber;
+  var numberParty;
   $(".available").click(function () {
     $("form").toggle(true);
     $(".tableNumber").text("Table Number: " + this.innerHTML);
@@ -13,6 +14,7 @@ $(document).ready(function() {
 
 
   $(".save").on("click",function(event){
+
     $("form").css("display","none");
     $(".available").css("z-index","0");
     var userName = $(".name").val();
@@ -25,7 +27,9 @@ $(document).ready(function() {
     $("form").hide();
     $("tableNumber").remove(this.innerHTML);
     container.off("click");
-    $(".reserved").append("<div class='test'>" + userName + userNum + userGuestNum + "</div>")
+    $(container).parent(".table").append("<div class ='hoverBox'>" + "<p> Name: " + userName + "</p>" + "<p> Party size: "  + userGuestNum + "</p><div>");
+
+  //  $(".reserved").append("<div class='test'>" + userName + userNum + userGuestNum + "</div>")
 
   });
 
@@ -34,9 +38,9 @@ $(document).ready(function() {
     if($(this).hasClass("reserved")){
       name = $(this).attr("name");
       userGuestNum = $(this).attr("numberOfParty");
+      userNum = $(this).attr("phoneNumber");
       userText = $(this).text();
       $(this).text("");
-      $(this).append("<div class ='hoverBox'>" + "Name: " + name + "Party size: "  + userGuestNum + "</div>");
     }
     }).on("mouseleave", function(event) {
     if($(this).hasClass("reserved")){
@@ -44,8 +48,9 @@ $(document).ready(function() {
     }
     });
 
+
   //Exit the icon
   $(".boxclose").on("click",function(){
-    $("form").toggle(false);
+    $("form").toggle();
   });
 });
